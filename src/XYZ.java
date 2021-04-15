@@ -8,7 +8,7 @@
  */
 public class XYZ {
 
-    private static int xyzCurrentPopulation = 10000000;
+    private static int xyzPopulation = 10000000;
 
     public static void main(String[] args) {
         int fertility = 14;
@@ -21,20 +21,20 @@ public class XYZ {
             year += 1;
             bornInYear = numberOfBirthsPerYear(fertility - i);
             diedInYear = numberOfDeathsPerYear(mortality - i);
-            xyzCurrentPopulation += (bornInYear - diedInYear);
-            System.out.print("Population after " + year + " year(s): " + xyzCurrentPopulation);
+            xyzPopulation += (bornInYear - diedInYear);
+            System.out.print("Population after " + year + " year(s): " + xyzPopulation);
             System.out.println(" | Born: " + bornInYear + " | Died: " + diedInYear);
         }
     }
 
     private static int numberOfBirthsPerYear(int fertility) {
         if (fertility < 7) fertility = 7;
-        return (xyzCurrentPopulation / 1000) * fertility;
+        return (xyzPopulation / 1000) * fertility;
     }
 
     private static int numberOfDeathsPerYear(int mortality) {
         if (mortality < 6) mortality = 6;
-        return (xyzCurrentPopulation / 1000) * mortality;
+        return (xyzPopulation / 1000) * mortality;
     }
 
 }
